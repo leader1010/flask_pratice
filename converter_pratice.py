@@ -43,5 +43,10 @@ def super_converter():
     return "<a href=%s>converter to_url</a>" % url_for("hello_id_re", id=333)
 
 
+@app.route("/4/<myre('\d{3}'):id>/<myre('\d{1}'):id>")
+def hello_id_re(id):
+    return f"hello 3 {id}"
+
+
 if __name__ == '__main__':
     app.run("127.0.0.1", port=5000, debug=True)
