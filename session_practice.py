@@ -2,6 +2,8 @@ from flask import Flask, session
 
 app = Flask(__name__)
 
+app.config["SECRET_KEY"] = "hliknjiosndflndg"
+
 
 @app.route("/login")
 def login():
