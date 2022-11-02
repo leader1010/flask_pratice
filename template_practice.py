@@ -2,11 +2,13 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
+
 # 装饰器增加自定义的过滤器
 # 自定义过滤器实现在线人数统计
 @app.template_filter("count")
 def filter_count_user(lst):
     return len(lst)
+
 
 # 使用add_template_filter增加过滤器
 # app.add_template_filter(filter_count_user, "count")
